@@ -32,7 +32,7 @@ public class AutopilotTest {
 	@AfterSuite
 	public void afterSuite(){
 		for(AutopilotWebDriver autopilotWebDriver : AutopilotWebDriver.values()) {
-			autopilotWebDriver.quit();
+			autopilotWebDriver.getWebDriver().quit();
 		}
 	}
 	
