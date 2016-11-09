@@ -19,7 +19,7 @@ public class AutopilotTest {
 		System.out.print(properties);
 	}
 	
-	protected String getProperty(String key){
+	protected String getTestData(String key){
 		return properties.getProperty(key);
 	}
 	

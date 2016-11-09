@@ -10,6 +10,10 @@ import com.jth.autopilot.pageobject.wikipedia.WikipediaPageObject;
 
 public class WikipediaSearchTest extends AutopilotTest{
 
+	private static final String WIKIPEDIA_SEARCH_RESULT_HEADING = "wikipedia.search.result.heading";
+	private static final String WIKIPEDIA_SEARCH_TERM = "wikipedia.search.term";
+	private static final String WIKIPEDIA_URL = "wikipedia.url";
+	
 	private WikipediaPageObject wikipediaPageObject;
 	
 	@BeforeClass
@@ -19,10 +23,10 @@ public class WikipediaSearchTest extends AutopilotTest{
 	
 	@Test
 	public void testSearchButton() {
-		wikipediaPageObject.navigateToWikipedia(getProperty("wikipedia.url"));
-		wikipediaPageObject.setSearchBox(getProperty("wikipedia.search.term"));
+		wikipediaPageObject.navigateToWikipedia(getTestData(WIKIPEDIA_URL));
+		wikipediaPageObject.setSearchBox(getTestData(WIKIPEDIA_SEARCH_TERM));
 		wikipediaPageObject.clickSeachButton();
 		
-		assertEquals(getProperty("wikipedia.search.result.heading"),wikipediaPageObject.getSearchResultHeading());
+		assertEquals(getTestData(WIKIPEDIA_SEARCH_RESULT_HEADING),wikipediaPageObject.getSearchResultHeading());
 	}
 }
